@@ -52,3 +52,69 @@ Bought: pepsi x 7
 Client ID: 2 vending machine 2 just shutdown!
 Tue May 23 12:25:41 2017
 
+Client ID: 1 vending 1 just connected!
+Mon May 29 10:04:33 2017
+
+Client ID: 2 vending machine 2 just connected!
+Mon May 29 10:04:45 2017
+
+Client ID: 1 vending 1 just shutdown!
+Mon May 29 10:05:29 2017
+
+Client ID: 2 vending machine 2 Mon May 29 10:06:24 2017
+Bought: coke x 10
+=========================================
+Client ID: 2 vending machine 2 Mon May 29 10:06:46 2017
+Bought: pepsi x 10
+=========================================
+Client ID: 2 vending machine 2 Mon May 29 10:07:05 2017
+Bought: fanta x 0
+=========================================
+Client ID: 2 vending machine 2 just shutdown!
+Mon May 29 10:08:13 2017
+
+Client ID: 1 vending1 just connected!
+Mon May 29 10:10:55 2017
+
+Client ID: 2 vending2 just connected!
+Mon May 29 10:12:00 2017
+
+Client ID: 1 vending1 Mon May 29 10:12:32 2017
+Bought: pepsi x 0
+=========================================
+Client ID: 1 vending1 Mon May 29 12:49:50 2017
+Bought: pepsi x 5
+=========================================
+Client ID: 1 vending1 just shutdown!
+Mon May 29 12:49:55 2017
+
+Client ID: 1 vending1 just connected!
+Mon May 29 12:50:01 2017
+
+Client ID: 1 vending1 just shutdown!
+Mon May 29 12:52:55 2017
+
+Client ID: 1 1 just connected!
+Mon May 29 12:55:11 2017
+
+Client ID: 1 1 Mon May 29 12:55:47 2017
+Bought: coke x 0
+=========================================
+Client ID: 1 1 just shutdown!
+Mon May 29 12:55:53 2017
+
+Client ID: 2 1 just connected!
+Mon May 29 13:16:05 2017
+
+Client ID: 2 1 just shutdown!
+Mon May 29 13:19:15 2017
+
+Client ID: 1 1 just connected!
+Mon May 29 13:21:38 2017
+
+Client ID: 1 1 Mon May 29 13:22:19 2017
+Bought: coke x 5
+=========================================
+Client ID: 1 1 just shutdown!
+Mon May 29 13:23:10 2017
+

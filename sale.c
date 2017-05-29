@@ -1,4 +1,7 @@
 #include "client.h"
+#include <stdio.h>
+#include <unistd.h>
+#include <signal.h>
 
 void sale(int sock, arg_struct *arg){
   char i;
@@ -8,10 +11,26 @@ void sale(int sock, arg_struct *arg){
   int leng;
   FILE *config_f;
   private_data_of_client *data;
-
+	void sigalrm_handler(int sig)
+{
+    int i;
+    //printf("\n\nChecking items left...\n");
+    
+   for(i = 0; i < data->number_item; i++)
+    if ((data->list_item[i].current_number_element)<= (data->list_item[i].warning_number_element))
+	    {
+	    	printf("\nDelivering more %s...\n",data->list_item[i].name);
+	    	sleep(5);
+	    	data->list_item[i].current_number_element = data->list_item[i].max_element;
+	    }	
+    
+		  
+   alarm(10); 
+} 
   data = &(arg->data);
   choice = 0;
-  
+    signal(SIGALRM, sigalrm_handler);   
+     alarm(10); 
   while( choice != (data->number_item + 1)){
     system("clear");
     // List item
@@ -72,7 +91,7 @@ void sale(int sock, arg_struct *arg){
 	      }
 	    }
 	    if( money > ( ((data->list_item)[choice -1]).cost * number_items ) ){
-	      printf("Reject you: %g vnd\n", money - ( ((data->list_item)[choice -1]).cost * number_items ));
+	      printf("Change: %g vnd\n", money - ( ((data->list_item)[choice -1]).cost * number_items ));
 	    }
 	    // Write back data;
 	    if( NULL == (config_f = (fopen( "config.cfg", "w")))){
@@ -81,12 +100,12 @@ void sale(int sock, arg_struct *arg){
 	    }
 	    
 	    ((data->list_item[choice -1]).current_number_element) = ((data->list_item[choice -1]).current_number_element) - number_items;
-	    if ((data->list_item[choice-1].current_number_element)<= (data->list_item[choice-1].warning_number_element))
-	    {
-	    	printf("\nDelivering more item...\n");
-	    	sleep(5);
-	    	data->list_item[choice-1].current_number_element = data->list_item[choice-1].max_element;
-	    }	    
+	    // if ((data->list_item[choice-1].current_number_element)<= (data->list_item[choice-1].warning_number_element))
+	    // {
+	    // 	printf("\nDelivering more item...\n");
+	    // 	sleep(5);
+	    // 	data->list_item[choice-1].current_number_element = data->list_item[choice-1].max_element;
+	    // }	    
 	    fwrite( data, sizeof(private_data_of_client), 1, config_f);
 	    fclose( config_f );	    
 	    // Log
