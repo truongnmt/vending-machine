@@ -11,25 +11,51 @@ void sale(int sock, arg_struct *arg){
   int leng;
   FILE *config_f;
   private_data_of_client *data;
-
+	 choice = 0;
   data = &(arg->data);
   	void sigalrm_handler(int sig)
 				{
 				    int i;
+				    int total=0;
 				    //printf("\n\nChecking items left...\n");
 				    
 				   for(i = 0; i < data->number_item; i++)
 				    if ((data->list_item[i].current_number_element)<= (data->list_item[i].warning_number_element))
 					    {
+					    	fflush(stdin);
 					    	printf("\nDelivering more %s...\n",data->list_item[i].name);
-					    	sleep(5);
+					    	
 					    	data->list_item[i].current_number_element = data->list_item[i].max_element;
+					    	total++;
+					
 					    }	
+						if(total>0)
+					    {
+					    	usleep(5000000);
+					    	system("clear");
+					    	printf("Done!\n");
+    // List item
+						    for(i = 0; i < data->number_item; i++){
+						      memset(menu_buffer, ' ', MAX_MENU_BUFFER_SIZE);
+						      printf( "%d) %s", i+ 1, ((data->list_item)[i]).name);
+						      
+						      printf("\t%g vnd", ((data->list_item)[i]).cost);
+						      printf( "\tItem left: %d\n",(data->list_item[i].current_number_element));
+						      //printf("%d) %s \t %g vnd\n", i+ 1, ((data->list_item)[i]).name, ((data->list_item)[i]).cost);
+						
+						     
+						    }
+						    printf("%d) Quit\n", i + 1);
+						    printf("Choose item: ");
+						
+						    //scanf("%d", &choice);
+					    }
 				    
-						getchar();
-				   alarm(10); 
+					
+				   alarm(10);
+				   return;
 				} 
-  choice = 0;
+ 
     signal(SIGALRM, sigalrm_handler);   
      alarm(10); 
   while( choice != (data->number_item + 1)){
@@ -52,7 +78,7 @@ void sale(int sock, arg_struct *arg){
       puts(menu_buffer);
     }
     printf("%d) Quit\n", i + 1);
-    printf("Choice item: ");
+    printf("Choose item: ");
 
     scanf("%d", &choice);
     while( getchar() != '\n');
