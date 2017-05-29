@@ -118,3 +118,54 @@ Bought: coke x 5
 Client ID: 1 1 just shutdown!
 Mon May 29 13:23:10 2017
 
+Client ID: 1 1 just connected!
+Mon May 29 14:34:48 2017
+
+Client ID: 1 1 Mon May 29 14:34:56 2017
+Bought: coke x 3
+=========================================
+Client ID: 1 1 Mon May 29 14:35:32 2017
+Bought: coke x 7
+=========================================
+Client ID: 1 1 just shutdown!
+Mon May 29 14:36:21 2017
+
+Client ID: 1 VM1 just connected!
+Mon May 29 14:40:07 2017
+
+Client ID: 1 VM1 Mon May 29 14:40:45 2017
+Bought: pepsi x 10
+=========================================
+Client ID: 1 VM1 Mon May 29 14:41:08 2017
+Bought: fanta x 6
+=========================================
+Client ID: 1 VM1 just shutdown!
+Mon May 29 14:42:13 2017
+
+Client ID: 1 VM1 just connected!
+Mon May 29 14:43:00 2017
+
+Client ID: 1 VM1 Mon May 29 14:43:18 2017
+Bought: pepsi x 8
+=========================================
+Client ID: 1 VM1 Mon May 29 14:43:40 2017
+Bought: pepsi x 1
+=========================================
+Client ID: 1 VM1 Mon May 29 14:45:15 2017
+Bought: fanta x 2
+=========================================
+Client ID: 1 VM1 Mon May 29 14:45:30 2017
+Bought: pepsi x 8
+=========================================
+Client ID: 1 VM1 Mon May 29 14:46:04 2017
+Bought: pepsi x 1
+=========================================
+Client ID: 1 VM1 Mon May 29 14:46:13 2017
+Bought: pepsi x 8
+=========================================
+Client ID: 1 VM1 Mon May 29 14:56:55 2017
+Bought: pepsi x 9
+=========================================
+Client ID: 1 VM1 Mon May 29 15:02:54 2017
+Bought: fanta x 9
+=========================================

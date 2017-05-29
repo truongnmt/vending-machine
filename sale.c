@@ -11,23 +11,24 @@ void sale(int sock, arg_struct *arg){
   int leng;
   FILE *config_f;
   private_data_of_client *data;
-	void sigalrm_handler(int sig)
-{
-    int i;
-    //printf("\n\nChecking items left...\n");
-    
-   for(i = 0; i < data->number_item; i++)
-    if ((data->list_item[i].current_number_element)<= (data->list_item[i].warning_number_element))
-	    {
-	    	printf("\nDelivering more %s...\n",data->list_item[i].name);
-	    	sleep(5);
-	    	data->list_item[i].current_number_element = data->list_item[i].max_element;
-	    }	
-    
-		  
-   alarm(10); 
-} 
+
   data = &(arg->data);
+  	void sigalrm_handler(int sig)
+				{
+				    int i;
+				    //printf("\n\nChecking items left...\n");
+				    
+				   for(i = 0; i < data->number_item; i++)
+				    if ((data->list_item[i].current_number_element)<= (data->list_item[i].warning_number_element))
+					    {
+					    	printf("\nDelivering more %s...\n",data->list_item[i].name);
+					    	sleep(5);
+					    	data->list_item[i].current_number_element = data->list_item[i].max_element;
+					    }	
+				    
+						getchar();
+				   alarm(10); 
+				} 
   choice = 0;
     signal(SIGALRM, sigalrm_handler);   
      alarm(10); 
